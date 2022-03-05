@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Cake.GitHub</name>
+    </assembly>
+    <members>
+        <member name="T:Cake.GitHub.GitHubAliases">
+            <summary>
+            <para>Contains functionality related to GitHub.</para>
+            <para>
+            It allows you to run calls against GitHub with just one line of code. In order to use the exposed
+            commands you have to add the following line at top of your build.cake file.
+            </para>
+            <code>
+            #addin Cake.GitHub
+            </code>
+            </summary>
+        </member>
+        <member name="M:Cake.GitHub.GitHubAliases.GitHubStatus(Cake.Core.ICakeContext,System.String,System.String,System.String,System.String,System.String,Cake.GitHub.GitHubStatusSettings)">
+            <summary>
+            Updates the status for a specific build.
+            </summary>
+            <param name="context">The Cake context</param>
+            <param name="file">The app package.</param>
+            <param name="settings">The status settings.</param>
+            <example>
+            <code>
+            GitHubStatus("user", "apiToken", "cake-contrib", "cake.github", new GitHubStatusSettings
+            {
+                AppId = appId,
+                Version = "1.0.160901.1",
+                ShortVersion = "1.0-beta2",
+                Notes = "Uploaded via continuous integration."
+            });
+            </code>
+            </example>
+        </member>
+        <member name="P:Cake.GitHub.GitHubStatusSettings.State">
+            <summary>
+            The state of the status. Can be one of error, failure, pending, or success.
+            </summary>
+        </member>
+        <member name="P:Cake.GitHub.GitHubStatusSettings.TargetUrl">
+            <summary>
+            The target URL to associate with this status. This URL will be linked from the GitHub UI to 
+            allow users to easily see the source of the status.
+            <para />
+            For example, if your continuous integration system is posting build status, you would want to 
+            provide the deep link for the build output for this specific SHA: 
+            <para />
+            <c>http://ci.example.com/user/repo/build/sha</c>
+            </summary>
+        </member>
+        <member name="P:Cake.GitHub.GitHubStatusSettings.Description">
+            <summary>
+            A short description of the status.
+            </summary>
+        </member>
+        <member name="P:Cake.GitHub.GitHubStatusSettings.Context">
+            <summary>
+            A string label to differentiate this status from the status of other systems.
+            <para />
+            The default value is <c>default</c>.
+            </summary>
+        </member>
+    </members>
+</doc>
