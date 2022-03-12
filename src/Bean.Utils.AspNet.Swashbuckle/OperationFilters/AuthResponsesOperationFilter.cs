@@ -1,10 +1,10 @@
-using Swashbuckle.AspNetCore.SwaggerGen;
 using System.Net;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Models;
+using Swashbuckle.AspNetCore.SwaggerGen;
 
-namespace Bean.Utils.AspNet.Swashbuckle
+namespace Bean.Utils.AspNet.Swashbuckle.OperationFilters
 {
   /// <summary>
   /// Auth.
